@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :portafolios
+  #get 'portafolio/:id', to: 'portafolio#show', as:'portafolio_show'
 
   # Home Page
   #get 'pages/home'  
