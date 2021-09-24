@@ -3,4 +3,3 @@ class Topic < ApplicationRecord
 
   has_many :blog
 end
-validates_presence_of
