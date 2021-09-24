@@ -35,8 +35,8 @@ puts "5 skills created"
     subtitle: "Ruby on Rails" ,
     string: "Ac odio tempor orci dapibus ultrices in iaculis nunc sed.",
     body: "Nulla malesuada pellentesque elit eget. Donec ultrices tincidunt arcu non sodales neque sodales. Ut tortor pretium viverra suspendisse potenti nullam ac. ",
-    main_image: "https://placeholder.it/600x400",
-    thumb_image: "https://placeholder.it/350x200"
+    main_image: "https://placehold.it/600x400",
+    thumb_image: "https://placehold.it/350x200"
   )
 end
 
@@ -48,8 +48,8 @@ puts "10 portafolio items created"
     subtitle: "Angular" ,
     string: "Ac odio tempor orci dapibus ultrices in iaculis nunc sed.",
     body: "Nulla malesuada pellentesque elit eget. Donec ultrices tincidunt arcu non sodales neque sodales. Ut tortor pretium viverra suspendisse potenti nullam ac. ",
-    main_image: "https://placeholder.it/600x400",
-    thumb_image: "https://placeholder.it/350x200"
+    main_image: "https://placehold.it/600x400",
+    thumb_image: "https://placehold.it/350x200"
   )
 end
 
