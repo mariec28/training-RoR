@@ -9,15 +9,16 @@ class PortafoliosController < ApplicationController
   def angular
     @angular_portfolio_items = Portafolio.angular
   end
-  
 
   def new
     @portafolio = Portafolio.new
+    3.times { @portafolio.tecnologies.build  }
+
   end
   
   # POST /blogs or /blogs.json
   def create
-    @portafolio = Portafolio.new(params.require(:portafolio).permit(:title,:subtitle ,:body))
+    @portafolio = Portafolio.new(params.require(:portafolio).permit(:title,:subtitle ,:body, tecnologies_attributes: [:name]))
 
     respond_to do |format|
       if @portafolio.save
