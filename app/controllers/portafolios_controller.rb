@@ -18,7 +18,7 @@ class PortafoliosController < ApplicationController
   
   # POST /blogs or /blogs.json
   def create
-    @portafolio = Portafolio.new(params.require(:portafolio).permit(:title,:subtitle ,:body, tecnologies_attributes: [:name]))
+    @portafolio = Portafolio.new(portafolio_params)
 
     respond_to do |format|
       if @portafolio.save
@@ -39,7 +39,7 @@ class PortafoliosController < ApplicationController
     @portafolio = Portafolio.find(params[:id])
     
     respond_to do |format|
-        if @portafolio.update(params.require(:portafolio).permit(:title,:subtitle ,:body))
+        if @portafolio.update(portafolios_params)
           format.html { redirect_to portafolios_path, notice: "Blog was successfully updated." }
           format.json { render :show, status: :ok, location: @portafolio}
         else
@@ -66,6 +66,14 @@ class PortafoliosController < ApplicationController
     end
   end
   
+  private  
+  def portafolio_params
+    params.require(:portafolio).permit(:title,
+                                       :subtitle,
+                                       :body,
+                                       tecnologies_attributes: [:name]
+                                       )
+  end
   
 
 end
