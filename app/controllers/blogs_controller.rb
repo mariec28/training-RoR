@@ -1,5 +1,7 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: %i[ show edit update destroy ]
+  #method params
+  layout "blog"
 
   # GET /blogs or /blogs.json
   def index
