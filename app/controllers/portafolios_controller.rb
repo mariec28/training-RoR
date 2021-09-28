@@ -1,5 +1,5 @@
 class PortafoliosController < ApplicationController
-  
+  before_action :set_portfolio_item, only: [:edit, :show, :update, :destroy]
   def index
     #@portfolio_items = Portafolio.where(subtitle:'Ruby on Rails')
     #@portfolio_items = Portafolio.ruby_on_rails_portfolio_items
@@ -32,11 +32,9 @@ class PortafoliosController < ApplicationController
   end
 
   def edit
-    @portafolio = Portafolio.find(params[:id])
   end
 
   def update
-    @portafolio = Portafolio.find(params[:id])
     
     respond_to do |format|
         if @portafolio.update(portafolios_params)
@@ -50,12 +48,11 @@ class PortafoliosController < ApplicationController
   end
 
   def show
-    @portafolio = Portafolio.find(params[:id])
+    binding.pry
   end
 
   def destroy
     #Perfom the lookup
-    @portafolio = Portafolio.find(params[:id])
     
     #Destroy/delete the record
     @portafolio.destroy
@@ -73,6 +70,10 @@ class PortafoliosController < ApplicationController
                                        :body,
                                        tecnologies_attributes: [:name]
                                        )
+  end
+
+  def set_portfolio_item
+    @portafolio = Portafolio.find(params[:id])
   end
   
 

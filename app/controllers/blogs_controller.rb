@@ -3,7 +3,17 @@ class BlogsController < ApplicationController
 
   # GET /blogs or /blogs.json
   def index
-    @blogs = Blog.all
+    #byebug
+    #binding.pry
+    @blogs = Blog.special_blogs
+    #binding.pry
+    @blogs = Blog.featured_blogs
+    #binding.pry
+    #byebug 
+    #puts '*' * 500
+    #puts @blogs.inspect
+    #puts '*' * 500
+    @page_title = 'My Portafolio Blog'
   end
 
   # GET /blogs/1 or /blogs/1.json
